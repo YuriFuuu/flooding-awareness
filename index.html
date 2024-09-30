@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="plotly-2.35.2.min.js" charset="utf-8"></script>
     <title>Flood Awareness</title>
-    <link rel="stylesheet" href="test.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>Flood Awareness</h1>
+        <h1>Flooding Awareness</h1>
         <nav>
             <ul>
                 <li><a href="#Home">Home</a></li>
@@ -30,18 +31,53 @@
                 </ul>
             </div>
         </aside>
+
         <main>
             <section id="articles">
                 <div class="s1">
+                    <article>
+                        <p> Flooding is one of the most devastating natural disasters, affecting countless communities across 
+                            the United States. Each year, heavy rains, hurricanes, and rising sea levels result in substantial 
+                            financial losses, leaving families struggling to recover from the aftermath. Here we delve into the 
+                            influence of flooding on people’s lives, highlighting the staggering financial problem incurred by 
+                            different states. Beyond the numbers, we aim to share the real stories and feelings of those who 
+                            have faced the harsh realities of flooding, illustrating their struggles and resilience. In the 
+                            historical overview of significant floods that have shaped the life of our nation, emphasizing the 
+                            urgent need for awareness and preparedness in the face of this growing threat.</p>
+                    </article>
                     <h2>Financial Losses by States</h2>
                     <article>
-                        <p>According to the graph below, we can see clearly the basic situation about financial losses caused by floodings each states. (Here is a detailed description for the graph)</p>
-                        <div class="placeholder1">
-                            Here is the place for a integrated graph 
-                        </div> <!-- Placeholder rectangle -->
-                    </div>
+                        <p> Based on data from fiscal year 2024, despite flooding impacting the entire nation, we focus on 
+                            the ten states with the highest financial losses following these disasters. The bar chart below 
+                            highlights the top 10 states with the most significant financial impacts, showing the number of 
+                            records for closed losses with payment, closed losses without payment, and open losses (active 
+                            claims still unresolved). Texas and Florida lead the list in terms of claims, but notably, Iowa, 
+                            with fewer than one-tenth the claims of these states, still ranks 10th in recovery costs.</p>
                     </article>
-                    
+                </div>
+
+                <div id="chart-container">
+                    <div id="bar-chart"></div>
+                    <div class = "annotation">
+                        <p>Data Source: NFIP Claims Data Financial Losses by State</p>
+                    </div>
+                </div>
+                
+                <article>
+                    <p> (Here should be the diagram to display the flooding losses payment and the policy coverage by top 10
+                        states, however the result is not very satisfying.) </p>
+                </article>
+
+                <div id="chart-container">
+                    <div id="sankey-diagram"></div>
+                    <div id="svg-plot">
+                        <img src="sankey.svg" alt="SVG Diagram">
+                    </div>
+                    <div class="annotation">
+                        <p>Data Source: NFIP Claims Data Policy and Loss Statistics by Flood Zone</p>
+                    </div>
+                </div>
+                
                 <div class="s2">
                     <h2>Personal Story</h2>
                     <div class="content">
@@ -57,20 +93,21 @@
                 <div class="s3">
                     <h2>Historical Flooding Events</h2>
                     <article>
-                        <p>Here is the interactive US map. Users can hover to different states, and the information of past floods happened here will pop up.</p>
+                        <p>Here is the interactive US map. Users can hover to different states, and the information of past floods that happened here will pop up.</p>
                     </article>
                     <div class="placeholder3"> 
-                        Here is the an interacitve map
+                        Here is an interactive map
                     </div> <!-- Placeholder rectangle -->
                 </div>
             </section>      
         </main>
     </div>    
 
-    <footer>
+    <!--<footer>
         <p>&copy; Perci September 2024 </p>
-    </footer>
+    </footer>-->
 
-    <script src="main.js"></script>
+    <!-- Include your JavaScript -->
+    <script src="plotly.js"></script>
 </body>
 </html>
