@@ -10,112 +10,57 @@ body, html {
     background-color: #f9f9f9;
     line-height: 1.6;
     color: #6d6d6d;
-
 }
 
 header {
-    background-image: 
-        linear-gradient(to bottom, rgba(89, 166, 157, 0) 0%, rgba(89, 166, 157, 1) 100%),
-        url('pexels-helen1-28447792.jpg');
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    text-align: center;
+    font-size: calc(1rem);
+    color: rgb(76, 240, 204);
+    overflow: hidden; /* Ensures the content stays within the header */
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("flooding-gif.gif");
     background-size: cover;
     background-position: center;
-    color: white;
-    padding: 60px;
-    text-align: center;
-    background-color: #59a69d;
-    font-size: 1.25rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    background-repeat: no-repeat;
+    filter: brightness(30%); 
+    z-index: 0; /* Ensures it stays behind the text */
 }
 
-h2 {
-    margin-bottom: 1rem;
-    text-align: center;
-    color: #376b66;
+header h1 {
+    position: relative;
+    z-index: 1; /* Places the text above the background */
+    opacity: 0; 
+    animation: fadeIn 3s ease-in forwards;
 }
 
-nav ul {
-    list-style-type: none;
-    display: flex;
-    justify-content: center;
-    margin-top: 1rem;
+@keyframes fadeIn {
+    0% {
+        opacity: 0; 
+    }
+    100% {
+        opacity: 1; 
+    }
 }
 
-nav ul li {
-    margin-right: 2rem;
-}
 
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 1rem;
-    padding: 2rem;
-    text-decoration: underline;
-}
 
 .container {
     display: flex;
     padding: 2rem;
-}
-
-.category-bar {
-    position: fixed;
-    right: 0;
-    top: 0;
-    width: 50px;
-    height: 100%;
-    background-color: #59a69d;
-    transition: width 0.3s ease;
-}
-
-.category-bar:hover {
-    width: 250px;
-}
-
-.category-label {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: rotate(-90deg) translateX(-50%);
-    transform-origin: left center;
-    background-color: #59a69d;
-    color: white;
-    padding: 10px;
-    text-align: center;
-    cursor: pointer;
-    width: 200px;
-    font-size: 1.2rem;
-}
-
-.categories {
-    display: none;
-    padding: 20px;
-}
-
-.category-bar:hover .categories {
-    display: block;
-}
-
-.categories ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.categories ul li {
-    margin-bottom: 10px;
-}
-
-.categories ul li a {
-    text-decoration: none;
-    color: #333;
-    padding: 10px;
-    display: block;
-    background-color: #f4f4f4;
-    transition: background-color 0.3s ease;
-}
-
-.categories ul li a:hover {
-    background-color: #00796B;
-    color: white;
 }
 
 main {
@@ -125,84 +70,15 @@ main {
     justify-content: center;
 }
 
-#articles {
-    max-width: 800px;
-    width: 100%; 
-    margin: 0 auto;
-    text-align: center;
-}
-
 section {
     margin-bottom: 4rem;
 }
 
-#chart-container {
-    position: relative; 
-    margin: 0 -100px;     /* Makes the chart wider than the article */
-    padding: 0;
-    overflow: visible;
-}
-
-#bar-chart {
-    width: 100%;
-    height: 500px; 
-}
-
-.placeholder2 {
-    width: 100%;
-    max-width: 600px;
-    height: 500px;
-    background-color: #ddd;
-    border: 1px solid #ccc;
-    margin: 0 auto 1rem;
-    display: flex;  
-    align-items: center; 
-    justify-content: center; 
-    color: #333;   
-    text-align: center;  
-    padding: 1rem;   
-}
-
-.s2 .content {
-    display: flex;                /* Enable flexbox layout */
-    align-items: center;          /* Vertically align items (optional) */
-    justify-content: space-between; /* Add space between the image and text */
-}
-
-.placeholder2 {
-    width: 45%;                   
-    height: 300px;
-    background-color: #ddd;
-    border: 1px solid #ccc;
-    margin-right: 2rem;        
-    display: flex;  
-    align-items: center; 
-    justify-content: center; 
-    color: #333;   
-    text-align: center;  
-    padding: 1rem;
-    margin-bottom: 3rem;
-}
-
-.s2 article {
-    flex: 1;                      /* Make the article take the remaining space */
-    text-align: justify;
-}
-
-
-.placeholder3 {
-    width: 200%;
-    max-width: 800px;
-    height: 700px;
-    background-color: #ddd;
-    border: 1px solid #ccc;
-    margin: 0 auto 1rem;
-    display: flex;  
-    align-items: center; 
-    justify-content: center; 
-    color: #333;   
-    text-align: center;  
-    padding: 1rem;   
+#articles {
+    max-width: 700px;
+    width: 100%; 
+    margin: 0 auto;
+    text-align: center;
 }
 
 article {
@@ -210,6 +86,11 @@ article {
     text-align: justify;
     font-size: 18px;
     line-height: 1.6;
+}
+
+.highlight {
+font-weight: bold;
+color: #11ada0;
 }
 
 .annotation {
@@ -220,12 +101,117 @@ article {
     margin-bottom: 3rem;
 }
 
-footer {
-    background-color: #59a69d;
-    color: #fff;
-    text-align: center;
-    padding: 1rem;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
+#barchart-container {
+    position: relative; 
+    margin: 0 -200px;     /* Makes the chart wider than the article */
+    padding: 0;
+    overflow: visible;
+    justify-content: center;
+}
+
+#bar-chart {
+    max-width: 1200px;
+    height: 500px; 
+}
+
+
+
+
+
+
+
+
+
+
+
+#sunburstchart-container {
+    position: relative; 
+    margin: 0 -100px;     /* Makes the chart wider than the article */
+    padding: 0;
+    overflow: visible;
+    justify-content: center;
+}
+
+#top-charts {
+    display: flex; /* Use flexbox for alignment */
+    justify-content: space-between; /* Space between left and right charts */
+    width: 100%; /* Full width to align side by side */
+    max-width: 800px; /* Optional: max width for the charts */
+    margin-bottom: 10px; /* Space between top charts and sunburst chart */
+}
+
+.side-chart {
+    flex: 1; /* Equal width for both charts */
+    display: flex;
+    justify-content: center; /* Center the images horizontally */
+}
+
+.side-chart img {
+    width: 100%; /* Resize images to 50% of their original size */
+    height: auto; /* Maintain aspect ratio */
+}
+
+#sunburst-chart {
+    width: 100%; /* Full width for the sunburst chart */
+    max-width: 800px; /* Optional: max width for the sunburst chart */
+}
+
+#chart {
+    margin-top: 10px; /* Space above chart 3 */
+}
+
+#chart img {
+    width: 50%; /* Resize chart-3 to 50% of its original size */
+    height: auto; /* Maintain aspect ratio */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+#map-container {
+    position: relative; 
+    margin: 0 -220px;     /* Makes the chart wider than the article */
+    padding: 0;
+    overflow: visible;
+}
+
+.background {
+    fill: #abd8ec;
+    pointer-events: all;
+}
+
+#states {
+    fill: #aaa;
+}
+
+#states .active {
+    display: none;
+}
+
+#state-borders {
+    fill: none;
+    stroke: #fff;
+    stroke-width: 1px;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+    pointer-events: none;
+}
+
+.county-boundary {
+    fill: #94dcc5;
+    stroke: #fff;
+    stroke-width: .5px;
+}
+
+.county-boundary:hover, .state:hover {
+    fill: rgb(0, 188, 147);
 }
