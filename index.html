@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.plot.ly/plotly-2.35.2.min.js" charset="utf-8"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/scrollama"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.7.0/d3.min.js"></script>
+    <script type="text/javascript" src="http://d3js.org/topojson.v3.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Flood Awareness</title>
+
+</head>
+<body>
+    <header>
+        <h1>How much awareness do you have of flooding?</h1>
+    </header>
+
+    <div class="container">
+        <main>
+            <section id="part1">
+                <article>
+                    <br><p> It is the most frequent natural disaster in United States.</p><br><br>
+                    <p> 
+                        Memories with flooding are always devastating, from property losses 
+                        to impact on people's lives. Each year, heavy rains, hurricanes, and 
+                        rising sea levels result in substantial financial losses, leaving families 
+                        struggling to recover from the aftermath. Both governments and individuals 
+                        bear a heavy financial burden because of it.
+                    </p><br>
+                    <p> 
+                        Beyond the numbers, we aim to share the real stories and feelings of those who 
+                        have faced the harsh realities of flooding, illustrating their struggles and resilience. 
+                        In the historical overview of significant floods that have shaped the life of the 
+                        nation, emphasizing the urgent need for awareness and preparedness in the face of 
+                        this growing threat.
+                    </p><br>
+                    <p> 
+                        First, let's take a look at the <span class="highlight">financial losses</span> during the floods, as it's one of 
+                        the most telling indicators of the severity of floods is the financial loss they 
+                        inflict. 
+                    </p><br> 
+                    <p> 
+                        Below, we explore <span class="highlight">the top 10 states</span> with the most significant financial impacts from 
+                        flooding. Based on data from <span class="highlight">fiscal year 2024</span>, while flooding is impacting the entire 
+                        nation, the bar chart below emphasizes the top 10 states with the greatest financial 
+                        burdens, showing the number of records for <span class="highlight">closed losses with payment</span>, 
+                        <span class="highlight">closed losses without payment</span>, and <span class="highlight">open losses</span> 
+                        (active claims still unresolved).
+                    </p><br>
+                </article>
+
+                <div id="barchart-container">
+                    <div id="bar-chart"></div>
+                    <div class = "annotation">
+                        <p>Data Source: NFIP Claims Data Financial Losses by State</p>
+                    </div>
+                </div>
+
+                <article>
+                    <p> 
+                        Texas and Florida lead the list in terms of claims, but notably, Iowa, with fewer than 
+                        one-tenth the claims of these states, still ranks 10th in recovery costs.
+                    </p><br>
+                    <p> 
+                        Here we delve into the specific financial impacts on individuals and businesses within 
+                        these states. The chart below illustrates detailing <span class="highlight">loss payments</span> categorized 
+                        by different <span class="highlight">occupancy</span> and <span class="highlight">business groups</span>. 
+                        Additionally, it highlights <span class="highlight">the individual payouts</span> in policies, 
+                        separating it into <span class="highlight">building coverage</span>, <span class="highlight">content coverage</span>, and both categories. 
+                        By examining these factors, we gain insight into not only the magnitude of financial losses 
+                        but also how well residents and businesses are protected against the aftermath of flooding. 
+                    </p><br>
+                    <p> 
+                        This data serves as a crucial reminder of the need for comprehensive <span class="highlight">insurance policies</span> 
+                        and <span class="highlight">proactive measures</span> to mitigate the financial burdens that come with flooding. 
+                        Understanding these individual loss payments and coverage details helps inform future policies and preparedness 
+                        efforts aimed at supporting affected communities. 
+                    </p><br>
+                    <p>
+                        Please click the parts you are interested in to check more details.
+                    </p>
+                </article>
+
+                <div id="circularchart-container">
+                    <!-- Insert the first chart -->
+                    <div class="flourish-embed" data-src="visualisation/19892026">
+                        <script src="https://public.flourish.studio/resources/embed.js"></script>
+                        <noscript>
+                            <img src="https://public.flourish.studio/visualisation/19892026/thumbnail" width="100%" alt="hierarchy visualization" />
+                        </noscript>
+                    </div>
+                    <!-- Insert the sencond chart -->
+                    <div class="flourish-embed" data-src="visualisation/19804187">
+                        <script src="https://public.flourish.studio/resources/embed.js"></script>
+                        <noscript>
+                            <img src="https://public.flourish.studio/visualisation/19804187/thumbnail" width="100%" alt="hierarchy visualization" />
+                        </noscript>
+                    </div>
+                    <div class="annotation">
+                        <p>Data Source: NFIP Claims Data Policy and Loss Statistics by Flood Zone</p>
+                    </div>
+                </div>
+
+                <article>
+                    <br><br><p>
+                        As flooding poses significant challenges across the U.S., it's crucial to recognize that many of these floods 
+                        are triggered by severe weather events, especially <span class="highlight">hurricanes</span>, which bring 
+                        destructive winds and torrential rain.
+                    </p>
+                </article>
+
+                <div id="gif-container">
+                    <button id="prev-button"></button>
+                    <img id="display-gif" src="flooding-gif.gif" alt="the thrid gif coming soon">
+                    <button id="next-button"></button>
+                </div>
+
+                <article>
+                    <br><br><p>
+                        On the evening of September 24, 2024, <span class="highlight">Hurricane Helene</span> made landfall in Florida's Big Bend area, 
+                        impacting the region as a powerful Category 4 storm. Following this, on October 9, <span class="highlight">Hurricane Milton</span> 
+                        struck Florida as a Category 3 storm. Both hurricanes caused widespread damage and significant flooding 
+                        throughout the state, severely affecting communities and infrastructure.
+                    </p>
+                </article>
+            </section>   
+            
+
+
+            <section id="part2">
+                <div id="hurricanes">
+                    <button id="helene-button">Hurricane Helene</button>
+                    <button id="milton-button">Hurricane Milton</button>
+                    <section id="scrolly">
+                        <figure>
+                            <img id="hurricane-maps-helene" src="hurricane-helene.jpg" style="display: none;">
+                            <img id="hurricane-maps-milton" src="hurricane-milton.jpg" style="display: none;">
+                        </figure>
+                        <article class="scrolly-article">
+                            <div class="step" data-step="1">
+                                <div class="step-text">
+                                    <p>Hurricane Helene, a Category 4 storm at landfall, caused widespread devastation from Florida's Gulf Coast to Tennessee, leaving over 600 miles of destruction and record flooding. By Sunday, officials reported more than 100 fatalities due to the storm.</p>
+                                </div>
+                            </div>
+                            <div class="step" data-step="2" >
+                                <img src="step2.jpg" style="max-height: 100%; padding: 10px"/>
+                                <div class="step-text">
+                                    <p>In Western North Carolina, Hurricane Helene's devastation is jeopardizing access to health care for many, including Tina Abbott, who was already managing multiple medical issues. She faces pain from a tissue tear, a spinal cyst, and chronic respiratory problems requiring a portable oxygen tank—so essential she had to refinance her car to pay for it.</p>
+                                    <!-- https://www.nytimes.com/2024/10/28/us/politics/north-carolina-helene-health-care.html -->
+                                </div>
+                            </div>
+                            <!-- <div class="step" data-step="3">
+                                <div class="step-text">
+                                    <p>Since Hurricane Helene hit North Carolina, reproductive health care has been severely disrupted, with the only abortion clinic in Western North Carolina closed and high-risk patients transferred to other hospitals. Dr. Bhaskari Burra noted that the storm worsened existing care shortages, while Mission Hospital faced water shortages that complicated postpartum care. Planned Parenthood's Asheville Health Center is also closed, and in-person requirements for medication abortion pose additional barriers. The state's 12-week abortion ban complicates access for out-of-state patients, and abortion funds have seen decreased donations since the Supreme Court overturned Roe v. Wade, raising concerns about access to services.</p>
+                                    <!-- https://ncnewsline.com/2024/11/03/hurricane-helene-jeopardized-high-risk-pregnancies-and-abortion-access-in-north-carolina/
+                                </div>                               
+                            </div> -->
+                            <div class="step" data-step="3"> 
+                                <img src="step3.jpg" style="max-height: 100%; padding: 10px"/>
+                                <div class="step-text">
+                                    <p>In Erwin, Tennessee, rescue workers have recovered the body of the final person still missing after massive flooding from Helene hit a plastic factory there. Rosa Andrade, 29, was one of six employees killed after they were unable to escape the rising waters around Impact Plastics in Erwin, a small town in East Tennessee. Surviving workers have stated they were not allowed to leave until water had flooded the plant’s parking lot and the power went out. Eleven people were swept away and only five were rescued.</p> 
+                                    <!-- https://apnews.com/article/helene-hurricane-impact-plastics-tennessee-death-a1fc2844b319c1ab62c7dc20d5853409 -->
+                                </div>                                
+                            </div>
+                            <div class="step" data-step="4">
+                                <div class="step-text">
+                                    <p>Ariel and Tiffany Lopez, residents of Shore Acres in St. Petersburg, Florida, underestimated Hurricane Helene, expecting only four inches of floodwater like Hurricane Idalia. However, they encountered a sudden surge that rose to four feet, forcing them to swim to safety with their four children. After reaching a friend's house, they returned to rescue their five pets. This terrifying experience led the couple to decide to move inland to avoid future flooding, viewing it as the final push they needed for a change.</p>
+                                    <!-- https://www.nytimes.com/2024/09/27/weather/shore-acres-flooding.html?searchResultPosition=5 -->
+                                </div>
+                                <img src="step4.jpg" style="max-height: 100%; padding: 10px"/>
+                            </div>
+                            <div class="step" data-step="6">
+                                <div class="step-text">
+                                    <p>news clip 6</p>
+                                </div>                                
+                            </div>
+                            <div class="step" data-step="7">
+                                <div class="step-text">
+                                    <p>news clip 7</p>
+                                </div>                                
+                            </div>
+                            <div class="step" data-step="8" style="display: none;">
+                                <div class="step-text">
+                                    <p>news clip 8</p>
+                                </div>                                
+                            </div>
+                        </article>
+                    </section>
+
+                </div>
+            </section>
+
+
+
+            <section id="part3">
+                <article>
+                    <br><p> 
+                        Explore the history of flooding impacts across the nation with the map below, 
+                        which visually represents <span class="highlight">significant flooding events from 1978 to 2022</span>. 
+                        Please select specific states to focus on and view detailed information about the 
+                        disasters that occurred there.
+                    </p><br>
+                    <p>
+                        By going through these historical events, we gain a clearer understanding of the increasing 
+                        frequency and severity of flooding, highlighting the critical need for preparedness and 
+                        resilience in facing future challenges.                    
+                    </p>
+                </article>
+
+                <div id="map-container">
+                    <div class="map"></div>
+                    <div class = "annotation">
+                        <p>Data Source: NFIP Significant Flood Events</p>
+                    </div>
+                </div>
+            </section>
+               
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
