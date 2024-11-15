@@ -14,7 +14,7 @@ body, html {
 }
 
 .header-styling {
-    background-image: url("step6-2.jpg");
+    background-image: url("flooding-gif.gif");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -95,7 +95,7 @@ article {
     font-size: 18px;
     line-height: 1.6;
     padding: 2rem;
-    max-width: 700px;
+    max-width: 55%;
 }
 
 .highlight {
