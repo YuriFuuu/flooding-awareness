@@ -13,40 +13,29 @@ body, html {
     color: #6d6d6d;
 }
 
-header {
-    position: relative;
-    height: 100vh;
-    /* width: 100vw; */
-    display: flex;
-    justify-content: center; 
-    align-items: center;
-    text-align: center;
-    font-size: calc(1rem);
-    color: rgb(76, 240, 204);
-    overflow: hidden; /* Ensures the content stays within the header */
-    padding: 2rem;
-}
-
-header::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+.header-styling {
     background-image: url("flooding-gif.gif");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     filter: brightness(30%); 
-    z-index: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 header h1 {
     position: relative;
     opacity: 0; 
     animation: fadeIn 3s ease-in forwards;
-    z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(76, 240, 204);
+    text-align: center;
 }
 
 @keyframes fadeIn {
