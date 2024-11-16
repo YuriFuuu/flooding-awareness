@@ -112,7 +112,8 @@ article {
 }
 
 #barchart-container {
-    width: 70vw;
+    width: 90vw;
+    max-width: 1000px;
     height: auto;
     margin: 0 auto;
     overflow: visible;
