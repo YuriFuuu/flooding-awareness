@@ -94,7 +94,7 @@ article {
     text-align: justify;
     font-size: 18px;
     line-height: 1.6;
-    padding: 2rem;
+    padding: 1rem;
     max-width: 55%;
 }
 
@@ -170,7 +170,7 @@ article {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 2rem;
+    padding: 1rem;
 }
   
 #display-gif {
