@@ -8,11 +8,10 @@ var trace1 = {
     orientation: 'h',
     type: 'bar',
     marker: {
-      color: 'rgba(67, 163, 149, 1)',
-      width: 1
+        color: 'rgba(67, 163, 149, 1)',
+        width: 1
     },
 };
-  
 var trace2 = {
     x: [20, 128, 42, 195, 290, 162, 263, 182, 801, 1237],
     y: ['Iowa', 'South Carolina', 'New Hampshire', 'Louisiana', 'New Jersey', 'California', 'New York', 'Maine', 'Florida', 'Texas'],
@@ -20,11 +19,10 @@ var trace2 = {
     orientation: 'h',
     type: 'bar',
     marker: {
-      color: 'rgba(67, 163, 149, 0.6)',
-      width: 1
+        color: 'rgba(67, 163, 149, 0.6)',
+        width: 1
     }
 };
-
 var trace3 = {
     x: [43, 291, 3, 27, 179, 20, 181, 15, 1208, 832],
     y: ['Iowa', 'South Carolina', 'New Hampshire', 'Louisiana', 'New Jersey', 'California', 'New York', 'Maine', 'Florida', 'Texas'],
@@ -32,66 +30,74 @@ var trace3 = {
     orientation: 'h',
     type: 'bar',
     marker: {
-      color: 'rgba(67, 163, 149, 0.3)',
-      width: 1
+        color: 'rgba(67, 163, 149, 0.3)',
+        width: 1
     }
 };
-  
+
 var data = [trace1, trace2, trace3];
-  
+
 var layout = {
     barmode: 'stack',
     barcornerradius: 5,
     plot_bgcolor: '#EBF7F6',
     paper_bgcolor: '#D8EFEE',
-    
     title: {
-    //   text: 'Number of Claims in the Top 10 States with the Highest Financial Losses',
-      text: 'Number of Claims in the Top 10 States',
-      font: {
-          family: 'Arial, sans-serif',
-          size: 20,
-          color: '#376b66'
-      },
-      y: 0.9,
-  },
+        text: 'Number of Claims in the Top 10 States',
+        font: {
+            family: 'Arial, sans-serif',
+            size: 20,
+            color: '#376b66'
+        },
+        y: 0.92,
+    },
     xaxis: {
-      tickfont: {
-        color: '#6d6d6d',
-        size: 10
-      }
+        tickfont: {
+            color: '#6d6d6d',
+            size: 10
+        },
+        automargin: true
     },
     yaxis: {
         tickfont: {
-          color: '#6d6d6d',
-          size: 10
+            color: '#6d6d6d',
+            size: 10
         },
-        automargin: true,
+        automargin: true
     },
-
     legend: {
-      orientation: 'h',
-      x: 0.5,
-      xanchor: 'center',
-      y: -0.09,
-      font: {
-          family: 'Arial, sans-serif',
-          size: 12,
-          color: '#6d6d6d'
-      },
-      bgcolor: 'rgba(255, 255, 255, 0.8)',
-      bordercolor: '#ccc',
-      borderwidth: 1
+        orientation: 'h',
+        x: 0.5,
+        xanchor: 'center',
+        y: -0.1,
+        font: {
+            family: 'Arial, sans-serif',
+            size: 12,
+            color: '#6d6d6d'
+        },
+        bgcolor: 'rgba(255, 255, 255, 0.8)',
+        bordercolor: '#ccc',
+        borderwidth: 1
     },
-
     margin: {
-      l:100,
-    }
-
-    
+        l: 20,
+        r: 20,
+        t: 80,
+        b: 20
+    },
+    autosize: true
 };
-  
-Plotly.newPlot(TESTER, data, layout);
+var config = {
+    responsive: true,
+    displayModeBar: false
+};
+
+function updateChart() {
+    Plotly.newPlot(TESTER, data, layout, config);
+}
+updateChart();
+
+window.addEventListener('resize', updateChart);
 
 
 
