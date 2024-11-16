@@ -39,31 +39,16 @@ var trace3 = {
 
 var data = [trace1, trace2, trace3];
 
-function getTitleFontSize() {
-    var width = window.innerWidth;
-    if (width < 600) {
-        return 16; // Mobile: smaller font size
-    } else if (width < 900) {
-        return 18; // Tablet: medium font size
-    } else {
-        return 20; // Desktop: default font size
-    }
-}
-
 var layout = {
     barmode: 'stack',
     barcornerradius: 5,
     plot_bgcolor: '#EBF7F6',
     paper_bgcolor: '#D8EFEE',
 
-    
-    
     title: {
-        text: 'Number of Claims in the Top 10 States',
+        text: "<span style='font-size:1rem;'>Number of Claims in the Top 10 States</span>",
         font: {
             family: 'Arial, sans-serif',
-            size: getTitleFontSize(),
-            size: 20,
             color: '#376b66'
         },
         y: 0.92,
