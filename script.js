@@ -12,6 +12,7 @@ var trace1 = {
         width: 1
     },
 };
+
 var trace2 = {
     x: [20, 128, 42, 195, 290, 162, 263, 182, 801, 1237],
     y: ['Iowa', 'South Carolina', 'New Hampshire', 'Louisiana', 'New Jersey', 'California', 'New York', 'Maine', 'Florida', 'Texas'],
@@ -23,6 +24,7 @@ var trace2 = {
         width: 1
     }
 };
+
 var trace3 = {
     x: [43, 291, 3, 27, 179, 20, 181, 15, 1208, 832],
     y: ['Iowa', 'South Carolina', 'New Hampshire', 'Louisiana', 'New Jersey', 'California', 'New York', 'Maine', 'Florida', 'Texas'],
@@ -37,15 +39,30 @@ var trace3 = {
 
 var data = [trace1, trace2, trace3];
 
+function getTitleFontSize() {
+    var width = window.innerWidth;
+    if (width < 600) {
+        return 16; // Mobile: smaller font size
+    } else if (width < 900) {
+        return 18; // Tablet: medium font size
+    } else {
+        return 20; // Desktop: default font size
+    }
+}
+
 var layout = {
     barmode: 'stack',
     barcornerradius: 5,
     plot_bgcolor: '#EBF7F6',
     paper_bgcolor: '#D8EFEE',
+
+    
+    
     title: {
         text: 'Number of Claims in the Top 10 States',
         font: {
             family: 'Arial, sans-serif',
+            size: getTitleFontSize(),
             size: 20,
             color: '#376b66'
         },
@@ -87,6 +104,7 @@ var layout = {
     },
     autosize: true
 };
+
 var config = {
     responsive: true,
     displayModeBar: false
@@ -95,8 +113,11 @@ var config = {
 function updateChart() {
     Plotly.newPlot(TESTER, data, layout, config);
 }
+
+// Initial plot
 updateChart();
 
+// Update on resize
 window.addEventListener('resize', updateChart);
 
 
