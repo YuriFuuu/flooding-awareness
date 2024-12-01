@@ -21,7 +21,8 @@ header {
     justify-content: center; 
     align-items: center;
     text-align: center;
-    font-size: calc(1.5rem);
+/*     font-size: calc(1.5rem); */
+    font-size: 20px;
     color: rgb(0, 134, 105);
     overflow: hidden;
     text-shadow: #fff 1px 0 10px;
